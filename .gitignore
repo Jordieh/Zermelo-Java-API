@@ -1,0 +1,7 @@
+# IntelliJ & Maven
+*.iml
+target/
+.idea/
+
+# Confidentional Information
+MyMainTestClass.java
