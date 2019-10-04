@@ -2,6 +2,9 @@ package dev.jb.zermelo.api.models;
 
 import java.util.Calendar;
 
+/**
+ * An authentication token is the 6-digit code that you receive on the app page of the portal.
+ */
 public class AuthenticationToken {
 
     private final String accessToken;

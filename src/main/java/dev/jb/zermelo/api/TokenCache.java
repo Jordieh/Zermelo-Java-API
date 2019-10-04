@@ -4,6 +4,12 @@ import dev.jb.zermelo.api.models.Token;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * This cache provides automatic refreshing capabilities to a {@link Token} object.
+ *
+ * @author Jordieh
+ * @see Service#exchangeToken(String)
+ */
 public class TokenCache {
 
     private Token token;

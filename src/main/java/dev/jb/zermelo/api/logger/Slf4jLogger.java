@@ -2,6 +2,11 @@ package dev.jb.zermelo.api.logger;
 
 import org.slf4j.Logger;
 
+/**
+ * Logs all output to the provided {@link Logger}.
+ *
+ * @author Jordieh
+ */
 public class Slf4jLogger implements ZermeloLogger {
 
     private final Logger logger;

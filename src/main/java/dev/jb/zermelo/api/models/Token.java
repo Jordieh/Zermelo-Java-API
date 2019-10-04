@@ -1,7 +1,15 @@
 package dev.jb.zermelo.api.models;
 
+import dev.jb.zermelo.api.Service;
+
 import java.util.Calendar;
 
+/**
+ * Detailed compliment for {@link AuthenticationToken} send by the API.
+ *
+ * @author Jordieh
+ * @see Service#exchangeToken(String)
+ */
 public class Token {
 
     private final String token;

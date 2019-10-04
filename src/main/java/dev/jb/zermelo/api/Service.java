@@ -13,6 +13,11 @@ import retrofit2.http.QueryMap;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * This is the gateway to the Zermelo API. Every call here is a 1:1 mapping to the <a href="https://confluence.zermelo.nl/display/DEV/General+API+Information">Documentation</a>.
+ *
+ * @author Jordieh
+ */
 public interface Service {
 
     @GET("announcements")
