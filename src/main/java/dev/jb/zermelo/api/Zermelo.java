@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import dev.jb.zermelo.api.gson.AuthenticationTokenAdapter;
 import dev.jb.zermelo.api.gson.TokenSerializer;
 import dev.jb.zermelo.api.gson.UnixInstantAdapter;
+import dev.jb.zermelo.api.logger.SystemLogger;
 import dev.jb.zermelo.api.logger.ZermeloLogger;
 import dev.jb.zermelo.api.models.AuthenticationToken;
 import dev.jb.zermelo.api.models.Token;
@@ -13,7 +14,17 @@ import retrofit2.Retrofit;
 
 import java.time.Instant;
 
+/**
+ * This is the main API Gateway.
+ *
+ * @author Jordieh
+ * @implSpec https://confluence.zermelo.nl/display/DEV/Introduction
+ */
 public class Zermelo {
+
+    public static void main(String[] args) {
+        new Zermelo(Version.V3, "myschool", new Retrofit.Builder(), new GsonBuilder(), new SystemLogger());
+    }
 
     private final Version version;
     private final Service service;
@@ -21,6 +32,15 @@ public class Zermelo {
     private final ZermeloLogger logger;
     private final TokenCache tokenCache;
 
+    /**
+     * Creates a Zermelo API interface.
+     *
+     * @param version The Zermelo version (Only {@link Version#V3} is properly supported.
+     * @param school  The school (###.zportal.nl).
+     * @param builder A Retrofit builder instance.
+     * @param gson    A Gson instance (Complementary adapters will be added to support the library).
+     * @param logger  Logger instance.
+     */
     public Zermelo(Version version, String school, Retrofit.Builder builder, GsonBuilder gson, ZermeloLogger logger) {
         this.version = version;
         this.logger = logger;
@@ -46,6 +66,11 @@ public class Zermelo {
         return logger;
     }
 
+    /**
+     * Returns the API service.
+     *
+     * @return The API service.
+     */
     public Service getService() {
         return service;
     }

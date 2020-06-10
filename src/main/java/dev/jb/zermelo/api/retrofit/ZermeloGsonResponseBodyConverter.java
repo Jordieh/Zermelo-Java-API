@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.Reader;
 
 /**
- * Converter that extracts special Zermelo data inside a 'response.data' json object.
+ * Converter that extracts special Zermelo data inside an encapsulated 'response.data' json object.
  */
 public class ZermeloGsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
 

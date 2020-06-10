@@ -1,5 +1,14 @@
 package dev.jb.zermelo.api;
 
+/**
+ * <p>
+ * This is a 1:1 mapping of the Zermelo version mentioned in the <a href="https://confluence.zermelo.nl/pages/viewpage.action?pageId=15860178">Documentation</a>.
+ * </p>
+ * Currently, only version {@link Version#V3} is supported by this library.
+ *
+ * @author Jordieh
+ * @see Zermelo#getVersion()
+ */
 public enum Version {
 
     V1(false, "v1", 1),
